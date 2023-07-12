@@ -1,16 +1,16 @@
-const router = require ("express")
-const UserModel = require("../models/User.model")
-const router = express.Router()
+const router = require ("express").Router()
+//const UserModel = require("../models/User.model")
+//const router = express.Router()
 const bcrypt = require("bcryptjs")
 
 // Get Signup page 
-router.get("/signup", (req, res, next) => {
+router.get("/signup", (req, res) => {
     res.render("auth/signup")
-})
+}); 
 
 // Post data to register a new user 
-router.post("/signup", async (req, res, next) => {
-    console.log(req.body)
+router.post("/signup", async (req, res) => {
+//    console.log(req.body)
     const payload = { ...req.body}
     
     delete payload.password
@@ -25,4 +25,6 @@ router.post("/signup", async (req, res, next) => {
     catch (err) {
         console.log(err)
     }
-})
+}); 
+
+module.exports = router; 
