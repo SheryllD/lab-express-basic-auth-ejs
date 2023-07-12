@@ -27,4 +27,24 @@ router.post("/signup", async (req, res) => {
     }
 }); 
 
+/*
+
+router.post("/login", async (req, res) => {
+    // first check for in the username in the DB
+    //Then if you 
+    try {
+        const foundUser = await User.findOne({ username: req.body.username });
+        console.log("here is the found user", foundUser); 
+        if (foundUser) {
+            let doesPasswordMatch = bcrypt.compareSync(
+                req.body.password, 
+                foundUser.passwordHash
+            ); 
+            console.log 
+        }
+    }
+})
+
+*/
+
 module.exports = router; 

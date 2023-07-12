@@ -14,6 +14,9 @@ const app = express()
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app)
 
+// this is where the session is actually called on onthe app
+
+
 // default value for title local
 const projectName = 'lab-express-basic-auth'
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase()
